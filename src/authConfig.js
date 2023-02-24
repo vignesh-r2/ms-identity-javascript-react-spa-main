@@ -19,6 +19,7 @@ export const msalConfig = {
       "https://login.microsoftonline.com/b76f3e23-31fe-405c-ba76-bd47f188cccb",
     ],
     redirectUri: "http://localhost:3000/",
+    postLogoutRedirectUri: "http://localhost:3000/",
   },
   cache: {
     cacheLocation: "localStorage", // This configures where your cache will be stored

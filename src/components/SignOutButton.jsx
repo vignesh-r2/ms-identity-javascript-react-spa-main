@@ -1,23 +1,26 @@
 import React from "react";
-import { useMsal } from "@azure/msal-react";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/esm/Dropdown";
+import { msalInstance } from "..";
 
 /**
  * Renders a sign-out button
  */
 export const SignOutButton = () => {
-    const { instance } = useMsal();
+    const account = msalInstance.getActiveAccount();
+    const accounts = msalInstance.getAllAccounts();
+    console.log(account);
+    console.log(accounts);
 
     const handleLogout = (logoutType) => {
         if (logoutType === "popup") {
-            instance.logoutPopup({
+            msalInstance.logoutPopup({
                 postLogoutRedirectUri: "/",
                 mainWindowRedirectUri: "/"
             });
         } else if (logoutType === "redirect") {
-            instance.logoutRedirect({
-                postLogoutRedirectUri: "/",
+            msalInstance.logoutRedirect({
+                postLogoutRedirectUri: "http://localhost:3000/",
             });
         }
     }
