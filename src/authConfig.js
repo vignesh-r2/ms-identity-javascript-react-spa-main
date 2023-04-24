@@ -12,12 +12,13 @@ import { LogLevel } from "@azure/msal-browser";
  */
 export const msalConfig = {
   auth: {
-    clientId: "d16b2b7b-26cb-486c-9ff2-b3fbbb2661c0",
-    // authority: "https://login.microsoftonline.com/common", (OR)
-    knownAuthorities: [
-      "https://login.microsoftonline.com/cac0ded9-8732-4e8f-bb93-8e0988c9783b",
-      "https://login.microsoftonline.com/b76f3e23-31fe-405c-ba76-bd47f188cccb",
-    ],
+    // clientId: "d16b2b7b-26cb-486c-9ff2-b3fbbb2661c0",
+    clientId: "19e990a5-b64c-47c0-8634-25ccdacea36c",
+    authority:
+      "https://login.microsoftonline.com/dea88e4d-0612-4f08-be2a-94c510154a72",
+    // knownAuthorities: [
+    //   "https://login.microsoftonline.com/dea88e4d-0612-4f08-be2a-94c510154a72",
+    // ],
     redirectUri: "http://localhost:3000/",
     postLogoutRedirectUri: "http://localhost:3000/",
   },
@@ -57,7 +58,7 @@ export const msalConfig = {
  * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
  */
 export const loginRequest = {
-  scopes: ["User.Read", "User.Read.All", "Subscription.Read.All"],
+  scopes: ["User.Read"],
 };
 
 /**
